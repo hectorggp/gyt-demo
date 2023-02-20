@@ -11,7 +11,7 @@ import { LoadingController, AlertController, Platform } from '@ionic/angular';
 })
 export class LoginPage {
 
-  FB_APP_ID: number = 2392489640796829;
+  FB_APP_ID: number = 2265244310189370;
 
   constructor(
     private fb: Facebook,
@@ -37,7 +37,7 @@ export class LoginPage {
       //Getting name and email properties
       //Learn more about permissions in https://developers.facebook.com/docs/facebook-login/permissions
 
-      this.fb.api("/me?fields=name,email", permissions)
+      this.fb.api("/me?fields=name,email,picture", permissions)
       .then(user => {
         user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
         //now we have the users info, let's save it in the NativeStorage
