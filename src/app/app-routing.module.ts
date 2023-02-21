@@ -6,7 +6,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'user', loadChildren: './user/user.module#UserPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'biometrico', loadChildren: './biometrico/biometrico.module#BiometricoPageModule', canActivate: [AuthGuard] },
+  { path: 'biometrico', loadChildren: './biometrico/biometrico.module#BiometricoPageModule', canActivate: [AuthGuard] },  { path: 'formulario', loadChildren: './formulario/formulario.module#FormularioPageModule' },
+
 ];
 
 @NgModule({
