@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { NavController, Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -11,6 +11,8 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+  @ViewChild('menu') menu: any;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -27,20 +29,21 @@ export class AppComponent {
       //Here we will check if the user is already logged in
       //because we don't want to ask users to log in each time they open the app
       this.nativeStorage.getItem('facebook_user')
-      .then( data => {
-        //user is previously logged and we have his data
-        //we will let him access the app
-        this.router.navigate(["/user"]);
-        this.splashScreen.hide();
-      }, err => {
-        this.router.navigate(["/login"]);
-        this.splashScreen.hide();
-      })
+        .then(data => {
+          //user is previously logged and we have his data
+          //we will let him access the app
+          this.router.navigate(["/user"]);
+          this.splashScreen.hide();
+        }, err => {
+          this.router.navigate(["/login"]);
+          this.splashScreen.hide();
+        })
       this.statusBar.styleDefault();
     });
   }
 
   navegar(ruta: string) {
     this.navController.navigateForward(ruta);
-  } 
+    this.menu.close()
+  }
 }

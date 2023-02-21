@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'biometrico', loadChildren: './biometrico/biometrico.module#BiometricoPageModule', canActivate: [AuthGuard] },  { path: 'formulario', loadChildren: './formulario/formulario.module#FormularioPageModule' },
   { path: 'github', loadChildren: './github/github.module#GithubPageModule' },
+  { path: 'localstorage', loadChildren: './localstorage/localstorage.module#LocalstoragePageModule' },
 
 ];
 

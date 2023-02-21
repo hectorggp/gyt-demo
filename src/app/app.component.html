@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu side="start" menuId="menu-principal" contentId="main">
+  <ion-menu #menu side="start" menuId="menu-principal" contentId="main">
     <ion-header>
       <ion-toolbar>
         <ion-title>Menú</ion-title>
@@ -15,6 +15,9 @@
         </ion-item>
         <ion-item (click)="navegar('/github')">
           Github
+        </ion-item>
+        <ion-item (click)="navegar('/localstorage')">
+          LocalStorage
         </ion-item>
       </ion-list>
     </ion-content>
