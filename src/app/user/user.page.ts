@@ -45,7 +45,7 @@ export class UserPage implements OnInit {
     this.fb.logout()
     .then(res => {
       //user logged out so we will remove him from the NativeStorage
-      this.nativeStorage.remove('facebook_user');
+      this.nativeStorage.clear()
       this.router.navigate(["/login"]);
     }, err => {
       console.log(err);
